@@ -1,0 +1,4 @@
+dotvim
+======
+
+Configuración de Vim
