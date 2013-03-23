@@ -47,9 +47,93 @@ Para añadir nuevos plugins
 
     $ git submodule add https://direccion.git bundle/nombreplugin
 
-## TODO ##
+## Cheat Sheet ##
 
-- Transcribir CheatSheet
+### Movement ###
+
++ Space/S-Space -> Page Adv/Page Back
++ gT/gt -> Move between Tabs
++ A-Left/Right -> Move between Buffers
++ C-j/k/l/h -> Move between windows
+
+### Search ###
+
++ / -> Incremental search case insensitive
++ \b -> Search on open buffers
++ \t -> Search on current directory files
++ \a -> Search using ack
+
+### Folding ###
+
++ za -> Toggle open/close current fold
++ zR -> Open all folds
++ zE -> Close all folds
+
+### Gundo Toggle ###
+
++ \g -> Open/Close Undo Window
+
+### Task list ###
+
++ \td -> Open/Close TODO/FIXME window
+
+### File Explorer ###
+
++ F2 -> Open/Close file explorer window
+
+### Tag list ###
+
++ F3 -> Open/Close tag list window
+
+### Comments ###
+
++ F4 -> Comment/Uncomment current line
+
+### Buffer Explorer ####
+
++ F5 -> Open buffer selection
+
+### Time stamp ###
+
++ F6 -> Insert timestamp
+
+### Tab completion ###
+
+Use <Tab> to get a list of possible completion words
+
+### Git ###
+
++ :Gblame -> line by line comparision
++ :Gwrite -> git add currentfile
++ :Gread -> git checkout currentfile
++ :Gcommit -> git commit
+
+### Web ###
+
++ \w -> on a visual selection asks for tag to wrap
+
+### Python related ###
+
+#### Python syntax check ####
+
++ F7 -> Check current Python file syntax
+
+#### Python Documentation ####
+
++ \pw -> When cursor is on a module, displays documentation
+
+#### Goto Definition ####
+
++ \j -> Goto cursor position definition
+
+#### Rename ####
+
++ \r -> Rename function/variable/class/whatever in a project
+
+### Other ###
+
++ C-s -> Saves the file
++ C-r -> on visual selection gets the text and offers replace
 
 ## Instalación desde 0 ##
 
