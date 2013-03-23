@@ -102,7 +102,7 @@ Hacer commit
 
 Y para subirlo a nuestro propio repositorio
 
-    $ git 
+    $ git push https://github.com/user/repo.git
 
 ## Referencias ##
 
