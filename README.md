@@ -53,7 +53,7 @@ Para añadir nuevos plugins
 
 + Space/S-Space -> Page Adv/Page Back
 + gT/gt -> Move between Tabs
-+ A-Left/Right -> Move between Buffers
++ A-h/l -> Move between Buffers
 + C-j/k/l/h -> Move between windows
 
 ### Search ###
