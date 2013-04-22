@@ -57,36 +57,41 @@ set statusline+=%-14(%l,%c%V%)   " line, character
 set statusline+=%<%P " file position
 set statusline+=%{fugitive#statusline()}
 
-"
+" --------------------------------------------------------
 " Show line number, cursor position.
 "
 set ruler
 
-"
+" --------------------------------------------------------
 " Display incomplete commands.
 "
 set showcmd
 
-"
+" --------------------------------------------------------
 " Show autocomplete menus.
 "
 set wildmenu
 
-"
+" --------------------------------------------------------
 " Show editing mode
 "
 set showmode
 
-"
+" --------------------------------------------------------
 " Error bells are displayed visually.
 "
 set visualbell
 
-"
+" --------------------------------------------------------
 " turn on line numbers
 "
 set number
 set numberwidth=5
+
+" --------------------------------------------------------
+" expand history limit
+"
+set history=200
 
 " --------------------------------------------------------
 " Search
