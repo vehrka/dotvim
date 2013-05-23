@@ -120,8 +120,17 @@ set guioptions-=m
 " Autocomands
 " set text width only in text files
 "
-autocmd FileType text,rst setlocal textwidth=76 
+au FileType text,rst setlocal textwidth=76 
+" 
+" completition for htmldjango
+"
+au FileType python set ft=python.django " For SnipMate
+au FileType html set ft=htmldjango.html " For SnipMate
 
+" 
+" completition for htmldjango
+"
+au FileType html set ft=html.snippets
 " --------------------------------------------------------
 " Directories
 " Put backup and temporary files where they don't bother
