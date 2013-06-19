@@ -104,7 +104,9 @@ set ignorecase
 " use za to open/close a fold
 "
 set foldmethod=indent 
-set foldlevel=100
+set foldlevel=1
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
 
 " --------------------------------------------------------
 " Set font
@@ -121,10 +123,12 @@ set guioptions-=m
 " set text width only in text files
 "
 au FileType text,rst setlocal textwidth=76 
+au FileType text,rst setlocal cc=77 
+au FileType python setlocal cc=80
 " 
 " completition for htmldjango
 "
-au FileType python set ft=python.django " For SnipMate
+"au FileType python set ft=python.django " For SnipMate
 au FileType html set ft=htmldjango.html " For SnipMate
 
 " 
