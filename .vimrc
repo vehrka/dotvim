@@ -121,7 +121,6 @@ set guioptions-=m
 " set text width only in text files
 "
 autocmd FileType text,rst setlocal textwidth=76 
-=======
 au FileType text,rst setlocal textwidth=76 
 au FileType text,rst setlocal cc=77 
 au FileType python setlocal cc=80
@@ -130,7 +129,6 @@ au FileType python setlocal cc=80
 "
 "au FileType python set ft=python.django " For SnipMate
 au FileType html set ft=htmldjango.html " For SnipMate
->>>>>>> 5da927094779fde84b9b5b8bcd007edb26aba0f5
 
 " 
 " completition for htmldjango
