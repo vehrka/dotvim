@@ -110,7 +110,7 @@ set guifont=DejaVu\ Sans\ Mono\ 12
 " Autocomands
 " set text width only in text files
 "
-autocmd FileType text setlocal textwidth=76 
+autocmd FileType text,rst setlocal textwidth=76 
 
 " --------------------------------------------------------
 " Directories
