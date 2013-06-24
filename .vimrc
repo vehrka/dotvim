@@ -57,36 +57,41 @@ set statusline+=%-14(%l,%c%V%)   " line, character
 set statusline+=%<%P " file position
 set statusline+=%{fugitive#statusline()}
 
-"
+" --------------------------------------------------------
 " Show line number, cursor position.
 "
 set ruler
 
-"
+" --------------------------------------------------------
 " Display incomplete commands.
 "
 set showcmd
 
-"
+" --------------------------------------------------------
 " Show autocomplete menus.
 "
 set wildmenu
 
-"
+" --------------------------------------------------------
 " Show editing mode
 "
 set showmode
 
-"
+" --------------------------------------------------------
 " Error bells are displayed visually.
 "
 set visualbell
 
-"
+" --------------------------------------------------------
 " turn on line numbers
 "
 set number
 set numberwidth=5
+
+" --------------------------------------------------------
+" expand history limit
+"
+set history=200
 
 " --------------------------------------------------------
 " Search
@@ -107,11 +112,30 @@ set foldlevel=100
 set guifont=DejaVu\ Sans\ Mono\ 12
 
 " --------------------------------------------------------
+" Remove menu bar in gui
+"
+set guioptions-=m
+
+" --------------------------------------------------------
 " Autocomands
 " set text width only in text files
 "
 autocmd FileType text,rst setlocal textwidth=76 
+=======
+au FileType text,rst setlocal textwidth=76 
+au FileType text,rst setlocal cc=77 
+au FileType python setlocal cc=80
+" 
+" completition for htmldjango
+"
+"au FileType python set ft=python.django " For SnipMate
+au FileType html set ft=htmldjango.html " For SnipMate
+>>>>>>> 5da927094779fde84b9b5b8bcd007edb26aba0f5
 
+" 
+" completition for htmldjango
+"
+au FileType html set ft=html.snippets
 " --------------------------------------------------------
 " Directories
 " Put backup and temporary files where they don't bother
@@ -259,33 +283,9 @@ nmap <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>a
 
 "
-" move between tabs
-"
-noremap <A-j> gT
-noremap <A-k> gt
-
-"
 " In visual mode C-r gets the selected text and ofers replace
 "
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
-"
-" Added by Tim to map alt-left/right to flip through buffers
-"
-nmap <A-Left> :bp<CR>
-nmap <A-Right> :bn<CR>
-
-"
-" F5 to list buffers and choose one
-"
-:nnoremap <F5> :buffers<CR>:buffer<Space>
-
-"
-" To insert timestamp, press F6.
-"
-nmap <F6> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-imap <F6> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
-
 
 " Window Splits Just a reminder
 " Vertical Split : Ctrl+w + v
@@ -299,6 +299,31 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+
+
+"
+" Added by Tim to map alt-left/right to flip through buffers
+"
+nmap <A-h> :bp<CR>
+nmap <A-l> :bn<CR>
+
+"
+" move between tabs
+"
+noremap <A-j> gT
+noremap <A-k> gt
+
+"
+" F5 to list buffers and choose one
+"
+:nnoremap <F5> :buffers<CR>:buffer<Space>
+
+"
+" To insert timestamp, press F6.
+"
+nmap <F6> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F6> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
 
 " --------------------------------------------------------
 " MACROS
