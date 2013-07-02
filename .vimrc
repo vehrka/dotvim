@@ -166,7 +166,7 @@ map <leader>td <Plug>TaskList
 "
 " NERDTree
 "   
-map <F2> :NERDTreeToggle<cr>
+map <S-F2> :NERDTreeToggle<cr>
 
 "
 " Tag List Toggle
@@ -274,11 +274,6 @@ endfunction
 noremap <space> <C-F>
 noremap <S-space> <C-B>
 
-"
-" To save, press ctrl-s.
-"
-nmap <C-s> :w<CR>
-imap <C-s> <Esc>:w<CR>a
 
 "
 " In visual mode C-r gets the selected text and ofers replace

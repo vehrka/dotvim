@@ -52,3 +52,6 @@
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "bundle/riv"]
+	path = bundle/riv
+	url = https://github.com/Rykka/riv.vim
