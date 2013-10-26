@@ -407,3 +407,10 @@ let @e='JJhhhhhvllllllldi'
 syntax enable
 filetype on
 filetype plugin indent on
+
+" --------------------------------------------------------
+"  Local vimrc
+"
+if filereadable('.lvimrc')
+    source .lvimrc
+endif
