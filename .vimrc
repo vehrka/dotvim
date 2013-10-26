@@ -40,7 +40,7 @@ set encoding=utf-8
 " --------------------------------------------------------
 " Set color scheme that I like.
 "
-colorscheme desert
+colorscheme murphy
 
 " --------------------------------------------------------
 " Status line
@@ -98,6 +98,8 @@ set history=200
 "
 set incsearch
 set ignorecase
+set smartcase
+set hlsearch
 
 " --------------------------------------------------------
 " Turn on folding
