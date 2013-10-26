@@ -1,17 +1,17 @@
+" vehrka dotvim
+"
+"
+"
 " --------------------------------------------------------
 " For Network oriented work set nocompatible mode
 "
 set nocp
 
 " --------------------------------------------------------
-" Mapserver sintax
-"
-let mysyntaxfile = "~/.vim/map.vim"
-
-" --------------------------------------------------------
 " Remapping the leader
 "
-let mapleader = "\\"
+let mapleader = ","
+let g:mapleader = ","
 
 " --------------------------------------------------------
 " Automatically indent when adding a curly bracket, etc.
@@ -40,7 +40,8 @@ set encoding=utf-8
 " --------------------------------------------------------
 " Set color scheme that I like.
 "
-colorscheme murphy
+colorscheme desert
+set background=dark
 
 " --------------------------------------------------------
 " Status line
@@ -71,6 +72,7 @@ set showcmd
 " Show autocomplete menus.
 "
 set wildmenu
+set wildignore=*.o,*~,*.pyc
 
 " --------------------------------------------------------
 " Show editing mode
@@ -80,6 +82,7 @@ set showmode
 " --------------------------------------------------------
 " Error bells are displayed visually.
 "
+set noerrorbells
 set visualbell
 
 " --------------------------------------------------------
@@ -102,46 +105,96 @@ set smartcase
 set hlsearch
 
 " --------------------------------------------------------
+"  Show matching brackets
+"
+set showmatch
+set mat=2 " tenths of a second to blink
+
+
+" --------------------------------------------------------
 " Turn on folding
-" use za to open/close a fold
 "
 set foldmethod=indent 
 set foldlevel=100
 
 " --------------------------------------------------------
-" Set font
+" A buffer becomes hidden when it is abandoned
 "
-set guifont=DejaVu\ Sans\ Mono\ 12
+set hidden
 
 " --------------------------------------------------------
-" Remove menu bar in gui
+" Backspace acts as it should act
 "
-set guioptions-=m
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
 
 " --------------------------------------------------------
-" Autocomands
-" set text width only in text files
+"  Remember info about open buffers on close
 "
-autocmd FileType text,rst setlocal textwidth=76 
-au FileType text,rst setlocal textwidth=76 
-au FileType text,rst setlocal cc=77 
-au FileType python setlocal cc=80
-" 
-" completition for htmldjango
-"
-"au FileType python set ft=python.django " For SnipMate
-au FileType html set ft=htmldjango.html " For SnipMate
+set viminfo^=%
 
-" 
-" completition for htmldjango
-"
-au FileType html set ft=html.snippets
 " --------------------------------------------------------
 " Directories
 " Put backup and temporary files where they don't bother
 "
 set backupdir=~/.vim/vim-tmp,~/.tmp,~/tmp,~/var/tmp,/tmp
 set directory=~/.vim/vim-tmp,~/.tmp,~/tmp,~/var/tmp,/tmp
+
+" --------------------------------------------------------
+"  GUI options
+"
+if has("gui_running")
+    " --------------------------------------------------------
+    " Set font
+    "
+    set guifont=DejaVu\ Sans\ Mono\ 12
+    " --------------------------------------------------------
+    " Remove menu bar in gui
+    "
+    set guioptions-=m
+    " --------------------------------------------------------
+    "  Add tab pages
+    "
+    set guioptions+=e
+    " --------------------------------------------------------
+    "  set 256 colors
+    "
+    set t_Co=256
+    " --------------------------------------------------------
+    "  GUI tab label
+    "
+    set guitablabel=%M\ %t
+endif
+
+" --------------------------------------------------------
+" Autocomands
+
+" --------------------------------------------------------
+" set text width only in text files
+"
+autocmd FileType text,rst setlocal textwidth=76 
+au FileType text,rst setlocal textwidth=76 
+au FileType text,rst setlocal cc=77 
+au FileType python setlocal cc=80
+
+" --------------------------------------------------------
+" completition for htmldjango
+"
+"au FileType python set ft=python.django " For SnipMate
+au FileType html set ft=htmldjango.html " For SnipMate
+
+" --------------------------------------------------------
+" completition for htmldjango
+"
+au FileType html set ft=html.snippets
+
+" --------------------------------------------------------
+" Return to last edit position when opening files (You want this!)
+"
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
 
 " --------------------------------------------------------
 " Plugins
@@ -276,7 +329,6 @@ endfunction
 noremap <space> <C-F>
 noremap <S-space> <C-B>
 
-
 "
 " In visual mode C-r gets the selected text and ofers replace
 "
@@ -294,7 +346,6 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-
 
 "
 " Added by Tim to map alt-left/right to flip through buffers
@@ -319,6 +370,25 @@ noremap <A-k> gt
 nmap <F6> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F6> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
+" --------------------------------------------------------
+"  Disable highlight when <leader><cr> is presed
+"
+map <silent> <leader><cr> :noh<cr>
+
+" --------------------------------------------------------
+" Switch CWD to the directory of the open buffer
+"
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" --------------------------------------------------------
+"  Sudo tee trick
+"
+map <leader>ws :w !sudo tee%<cr>
+
+" --------------------------------------------------------
+" Mapserver sintax
+"
+let mysyntaxfile = "~/.vim/map.vim"
 
 " --------------------------------------------------------
 " MACROS
@@ -334,6 +404,6 @@ let @e='JJhhhhhvllllllldi'
 " --------------------------------------------------------
 " Syntax highlighting and Validation
 "
-syntax on
+syntax enable
 filetype on
 filetype plugin indent on

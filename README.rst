@@ -85,31 +85,26 @@ Search
 --------------
 
 + / -> Incremental search case insensitive
-+ \\b -> Search on open buffers
-+ \\t -> Search on current directory files
-+ \\a -> Search using ack
-
-Folding 
---------
-
-+ za -> Toggle open/close current fold
-+ zR -> Open all folds
-+ zE -> Close all folds
++ ,b -> Search on open buffers
++ ,t -> Search on current directory files
++ ,a -> Search using ack
++ ,<cr> -> Disable highlight
 
 Gundo Toggle 
 -------------
 
-+ \\g -> Open/Close Undo Window
++ ,g -> Open/Close Undo Window
 
 Task list 
 ----------
 
-+ \\td -> Open/Close TODO/FIXME window
++ ,td -> Open/Close TODO/FIXME window
 
 File Explorer 
 --------------
 
-+ <Shift + F2> -> Open/Close file explorer window
++ F2 -> Open/Close file explorer window
++ ,cd -> CWD to current file directory
 
 Tag list 
 ---------
@@ -147,7 +142,12 @@ Git
 Web 
 ----
 
-+ \\w -> on a visual selection asks for tag to wrap
++ ,w -> on a visual selection asks for tag to wrap
+
+Sudo trick
+----------
+
++ ,ws -> Does the sudo trick
 
 Python related 
 ---------------
@@ -160,71 +160,18 @@ Python syntax check
 Python Documentation 
 ~~~~~~~~~~~~~~~~~~~~~
 
-+ \\pw -> When cursor is on a module, displays documentation
++ ,pw -> When cursor is on a module, displays documentation
 
 Goto Definition 
 ~~~~~~~~~~~~~~~~
 
-+ \\j -> Goto cursor position definition
++ ,j -> Goto cursor position definition
 
 Rename 
 ~~~~~~~
 
-+ \\r -> Rename function/variable/class/whatever in a project
++ ,r -> Rename function/variable/class/whatever in a project
 
-VimWiki 
---------
-
-Syntax
-~~~~~~
-
-see *:h vimwiki-syntax*::
-
-    *bold* -- bold 
-    _italic_ -- italic 
-
-    [[wiki link]] -- link with spaces 
-    [[wiki link|description]] -- link with description 
-
-    Lists: 
-    * bullet list item 1 
-        - bullet list item 2 
-        - bullet list item 3 
-            * bullet list item 4 
-            * bullet list item 5 
-    * bullet list item 6 
-    * bullet list item 7 
-        - bullet list item 8 
-        - bullet list item 9 
-
-        # numbered list item 1 
-        # numbered list item 2 
-        # numbered list item 3 
-        # numbered list item 4 
-
-    = Header1 = 
-    == Header2 == 
-    === Header3 === 
-
-
-Key bindings 
-~~~~~~~~~~~~~
-
-see *:h vimwiki-mappings*
-
-normal mode: 
-
-+ \\ww -> Open default wiki index file. 
-+ \\wt -> Open default wiki index file in a new tab. 
-+ \\ws -> Select and open wiki index file. 
-+ \\wd -> Delete wiki file you are in. 
-+ \\wr -> Rename wiki file you are in. 
-+ <Enter> -> Folow/Create wiki link 
-+ <Shift-Enter> -> Split and folow/create wiki link 
-+ <Ctrl-Enter> -> Vertical split and folow/create wiki link 
-+ <Backspace> -> Go back to parent(previous) wiki link 
-+ <Tab> -> Find next wiki link 
-+ <Shift-Tab> -> Find previous wiki link 
 
 reStructuredText in Vim a.k.a. Riv 
 -----------------------------------
@@ -557,3 +504,4 @@ Referencias
 + http://vim.wikia.com/wiki/Macros#Saving_a_macro
 + http://www.sontek.net/blog/detail/turning-vim-into-a-modern-python-ide
 + http://tompurl.com/2012/11/22/writing-a-book-with-vim/
++ http://amix.dk/vim/vimrc.html
