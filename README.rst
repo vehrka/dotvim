@@ -149,6 +149,12 @@ Sudo trick
 
 + ,ws -> Does the sudo trick
 
+Activation deactivation of autoindenting
+----------------------------------------
+
++ ,i -> autoindent and smartindent
++ ,ni -> no indenting
+
 Python related 
 ---------------
 

@@ -149,6 +149,10 @@ if has("gui_running")
     "
     set guifont=DejaVu\ Sans\ Mono\ 12
     " --------------------------------------------------------
+    " Remove Toobar in gui
+    "
+    set guioptions-=T
+    " --------------------------------------------------------
     " Remove menu bar in gui
     "
     set guioptions-=m
@@ -221,7 +225,7 @@ map <leader>td <Plug>TaskList
 "
 " NERDTree
 "   
-map <S-F2> :NERDTreeToggle<cr>
+map <F2> :NERDTreeToggle<cr>
 
 "
 " Tag List Toggle
@@ -321,6 +325,19 @@ function! VisualHTMLTagWrap()
     exe "normal i<".tag.">"
     normal `<
   endif
+endfunction
+
+"
+" Autoindent mode
+"
+map <Leader>i <Esc>:call MyAutoIndent()<CR>
+function! MyAutoIndent()
+    set autoindent
+    set smartindent
+endfunction
+map <Leader>ni <Esc>:call MyNOAutoIndent()<CR>
+function! MyNOAutoIndent()
+    setl noai nocin nosi inde=
 endfunction
 
 "
