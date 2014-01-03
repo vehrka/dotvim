@@ -271,8 +271,9 @@ set completeopt=menuone,longest,preview
 "
 " To make finding and opening files within your project even easier, we are going to use the command-t plugin.
 " command-t is bound to <leader>t
-" searching only through opened buffers using <leader>b.
-"
+" searching only through opened buffers using <leader>b
+" refresh available files with <leader>y
+map <leader>y :CommandTFlush<CR>
 
 " 
 " Ropevim
@@ -428,6 +429,4 @@ filetype plugin indent on
 " --------------------------------------------------------
 "  Local vimrc
 "
-if filereadable('.lvimrc')
-    source .lvimrc
-endif
+map <leader>lv :source .lvimrc<cr>
