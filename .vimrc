@@ -235,7 +235,7 @@ map <F3> :TlistToggle<cr>
 "
 " NERDCommenter 
 " 
-map <F4> \c<space><cr>
+map <F4> <leader>c<space><cr>
 
 "
 " Vim-Flake8
@@ -413,10 +413,10 @@ let mysyntaxfile = "~/.vim/map.vim"
 " ^M es un caracter especial para representar <CR> que se obtiene
 " haciendo Ctrl+V y Ctrl+M.
 "
-let @a='gv$\wpWW'
-let @b='\wbgvE\walli name=""i'
-let @c='\walli href=".htm#"hhhhhi'
-let @h='V\wh4llllvlldjhhhhP'
+let @a='gv$,wpWW'
+let @b=',wbgvE,walli name=""i'
+let @c=',walli href=".htm#"hhhhhi'
+let @h='V,wh4llllvlldjhhhhP'
 let @e='JJhhhhhvllllllldi'
 
 " --------------------------------------------------------
