@@ -235,7 +235,7 @@ map <F3> :TlistToggle<cr>
 "
 " NERDCommenter 
 " 
-map <F4> \c<space><cr>
+map <F4> <leader>c<space><cr>
 
 "
 " Vim-Flake8
@@ -271,8 +271,9 @@ set completeopt=menuone,longest,preview
 "
 " To make finding and opening files within your project even easier, we are going to use the command-t plugin.
 " command-t is bound to <leader>t
-" searching only through opened buffers using <leader>b.
-"
+" searching only through opened buffers using <leader>b
+" refresh available files with <leader>y
+map <leader>y :CommandTFlush<CR>
 
 " 
 " Ropevim
@@ -412,10 +413,10 @@ let mysyntaxfile = "~/.vim/map.vim"
 " ^M es un caracter especial para representar <CR> que se obtiene
 " haciendo Ctrl+V y Ctrl+M.
 "
-let @a='gv$\wpWW'
-let @b='\wbgvE\walli name=""i'
-let @c='\walli href=".htm#"hhhhhi'
-let @h='V\wh4llllvlldjhhhhP'
+let @a='gv$,wpWW'
+let @b=',wbgvE,walli name=""i'
+let @c=',walli href=".htm#"hhhhhi'
+let @h='V,wh4llllvlldjhhhhP'
 let @e='JJhhhhhvllllllldi'
 
 " --------------------------------------------------------
@@ -428,6 +429,4 @@ filetype plugin indent on
 " --------------------------------------------------------
 "  Local vimrc
 "
-if filereadable('.lvimrc')
-    source .lvimrc
-endif
+map <leader>lv :source .lvimrc<cr>
