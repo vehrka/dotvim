@@ -40,6 +40,7 @@ set encoding=utf-8
 " --------------------------------------------------------
 " Set color scheme that I like.
 "
+set t_Co=256
 colorscheme desert
 set background=dark
 
@@ -160,10 +161,6 @@ if has("gui_running")
     "  Add tab pages
     "
     set guioptions+=e
-    " --------------------------------------------------------
-    "  set 256 colors
-    "
-    set t_Co=256
     " --------------------------------------------------------
     "  GUI tab label
     "
