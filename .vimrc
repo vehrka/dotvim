@@ -22,8 +22,10 @@ set autoindent
 " --------------------------------------------------------
 " This is the official Python convention
 "
-set shiftwidth=4
 set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
 set expandtab
 set smarttab
 
@@ -318,7 +320,11 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
-
+"
+" EASIER FORMATTING OF PARAGRAPHS
+"
+vmap Q gq
+nmap Q gqap
 
 "
 " WRAP HTML IN SELECTION
