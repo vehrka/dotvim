@@ -187,236 +187,236 @@ Commands
 
 + **View**
 
-  - _`:RivFoldToggle` : Toggle Fold
+  - _`:RivFoldToggle` : **Toggle Fold**
 
-    **Normal** :	<C-E><Space><Space>
+    *Normal* :	<C-E><Space><Space>
 
-  - _`:RivFoldAll` : Toggle all folding
+  - _`:RivFoldAll` : **Toggle all folding**
 
-    **Normal** :	<C-E><Space>a
+    *Normal* :	<C-E><Space>a
 
-  - _`:RivFoldUpdate` : Update Folding
+  - _`:RivFoldUpdate` : **Update Folding**
 
-    **Normal** :	<C-E><Space>u
+    *Normal* :	<C-E><Space>u
 
-  - _`:RivLinkOpen` : Open Link under Cursor
+  - _`:RivLinkOpen` : **Open Link under Cursor**
 
-    **Normal** :	<C-E>ko
+    *Normal* :	<C-E>ko
 
-  - _`:RivLinkNext` : Jump to Next Link
+  - _`:RivLinkNext` : **Jump to Next Link**
 
-    **Normal** :	<C-E>kn,<TAB>
+    *Normal* :	<C-E>kn,<TAB>
 
-  - _`:RivLinkPrev` : Jump to Prev Linx
+  - _`:RivLinkPrev` : **Jump to Prev Linx**
 
-    **Normal** :	<C-E>kp,<S-TAB>
+    *Normal* :	<C-E>kp,<S-TAB>
 
 + **Doc**
 
-  - _`:RivTitle0` : Create Type 0 Title
+  - _`:RivTitle0` : **Create Type 0 Title**
 
-    **Normal,Insert** :	<C-E>s0
+    *Normal,Insert* :	<C-E>s0
 
-  - _`:RivTitle6` : Create Type 6 Title
+  - _`:RivTitle6` : **Create Type 6 Title**
 
-    **Normal,Insert** :	<C-E>s6
-
-
-  - _`:RivTableCreate` : Create a Table
-
-    **Normal,Insert** :	<C-E>tc
-
-  - _`:RivTableFormat` : Format table
-
-    **Normal,Insert** :	<C-E>tf
-
-  - _`:RivTableNextCell` : Nav to Next Cell
-
-    **Normal,Insert** :	<C-E>tn
-
-  - _`:RivTablePrevCell` : Nav to Prev Cell
-
-    **Normal,Insert** :	<C-E>tp
-
-  - _`:RivListNew` : Create a New List
-
-    **Normal,Insert** :	<C-E>ln
-
-  - _`:RivListSub` : Create a sub list item
-
-    **Normal,Insert** :	<C-E>lb
-
-  - _`:RivListSup` : Create a sup list item
-
-    **Normal,Insert** :	<C-E>lp
-
-  - _`:RivListToggle` : ToggleList item
-
-    **Normal,Insert** :	<C-E>l`
-
-  - _`:RivListDelete` : Delete List item
-
-    **Normal,Insert** :	<C-E>lx
-
-  - _`:RivListType0` : Create a List type 0
-
-    **Normal,Insert** :	<C-E>l1
-
-  - _`:RivListType4` : Create a List type 4
-
-    **Normal,Insert** :	<C-E>l5
-
-  - _`:RivTodoToggle` : Toggle Todo item's status
-
-    **Normal,Insert** :	<C-E>ee
-
-  - _`:RivTodoDel` : Del Todo Item
-
-    **Normal,Insert** :	<C-E>ex
-
-  - _`:RivTodoDate` : Change Date stamp under cursor
-
-    **Normal,Insert** :	<C-E>ed
-
-  - _`:RivTodoPrior` : Change Todo Priorties
-
-    **Normal,Insert** :	<C-E>ep
-
-  - _`:RivTodoAsk` : Show the todo group list
-
-    **Normal,Insert** :	<C-E>e`
-
-  - _`:RivTodoType1` : Change to group 1
-
-    **Normal,Insert** :	<C-E>e1
+    *Normal,Insert* :	<C-E>s6
 
 
-  - _`:RivTodoType4` : Change to group 4
+  - _`:RivTableCreate` : **Create a Table**
 
-    **Normal,Insert** :	<C-E>e4
+    *Normal,Insert* :	<C-E>tc
 
-  - _`:RivTodoUpdateCache` : Update Todo cache
+  - _`:RivTableFormat` : **Format table**
 
-    **Normal** :	<C-E>uc
+    *Normal,Insert* :	<C-E>tf
+
+  - _`:RivTableNextCell` : **Nav to Next Cell**
+
+    *Normal,Insert* :	<C-E>tn
+
+  - _`:RivTablePrevCell` : **Nav to Prev Cell**
+
+    *Normal,Insert* :	<C-E>tp
+
+  - _`:RivListNew` : **Create a New List**
+
+    *Normal,Insert* :	<C-E>ln
+
+  - _`:RivListSub` : **Create a sub list item**
+
+    *Normal,Insert* :	<C-E>lb
+
+  - _`:RivListSup` : **Create a sup list item**
+
+    *Normal,Insert* :	<C-E>lp
+
+  - _`:RivListToggle` : **ToggleList item**
+
+    *Normal,Insert* :	<C-E>l`
+
+  - _`:RivListDelete` : **Delete List item**
+
+    *Normal,Insert* :	<C-E>lx
+
+  - _`:RivListType0` : **Create a List type 0**
+
+    *Normal,Insert* :	<C-E>l1
+
+  - _`:RivListType4` : **Create a List type 4**
+
+    *Normal,Insert* :	<C-E>l5
+
+  - _`:RivTodoToggle` : **Toggle Todo item's status**
+
+    *Normal,Insert* :	<C-E>ee
+
+  - _`:RivTodoDel` : **Del Todo Item**
+
+    *Normal,Insert* :	<C-E>ex
+
+  - _`:RivTodoDate` : **Change Date stamp under cursor**
+
+    *Normal,Insert* :	<C-E>ed
+
+  - _`:RivTodoPrior` : **Change Todo Priorties**
+
+    *Normal,Insert* :	<C-E>ep
+
+  - _`:RivTodoAsk` : **Show the todo group list**
+
+    *Normal,Insert* :	<C-E>e`
+
+  - _`:RivTodoType1` : **Change to group 1**
+
+    *Normal,Insert* :	<C-E>e1
+
+
+  - _`:RivTodoType4` : **Change to group 4**
+
+    *Normal,Insert* :	<C-E>e4
+
+  - _`:RivTodoUpdateCache` : **Update Todo cache**
+
+    *Normal* :	<C-E>uc
 
 + **Edit**
 
-  - _`:RivCreateLink` : Create Link based on current word
+  - _`:RivCreateLink` : **Create Link based on current word**
 
-    **Normal,Insert** :	<C-E>ck
+    *Normal,Insert* :	<C-E>ck
 
-  - _`:RivCreateFoot` : Create Footnote
+  - _`:RivCreateFoot` : **Create Footnote**
 
-    **Normal,Insert** :	<C-E>cf
+    *Normal,Insert* :	<C-E>cf
 
-  - _`:RivCreateDate` : Insert Current Date
+  - _`:RivCreateDate` : **Insert Current Date**
 
-    **Normal,Insert** :	<C-E>cdd
+    *Normal,Insert* :	<C-E>cdd
 
-  - _`:RivCreateTime` : Insert Current time
+  - _`:RivCreateTime` : **Insert Current time**
 
-    **Normal,Insert** :	<C-E>cdt
+    *Normal,Insert* :	<C-E>cdt
 
-  - _`:RivCreateContent` : Insert Content Table
+  - _`:RivCreateContent` : **Insert Content Table**
 
-    **Normal** :	<C-E>cc
+    *Normal* :	<C-E>cc
 
-  - _`:RivCreateEmphasis` : Emphasis
+  - _`:RivCreateEmphasis` : **Emphasis**
 
-    **Normal,Insert** :	<C-E>ce
+    *Normal,Insert* :	<C-E>ce
 
-  - _`:RivCreateStrong` : Strong
+  - _`:RivCreateStrong` : **Strong**
 
-    **Normal,Insert** :	<C-E>cs
+    *Normal,Insert* :	<C-E>cs
 
-  - _`:RivCreateInterpreted` : Interpreted
+  - _`:RivCreateInterpreted` : **Interpreted**
 
-    **Normal,Insert** :	<C-E>ci
+    *Normal,Insert* :	<C-E>ci
 
-  - _`:RivCreateLiteralInline` : LiteralInline
+  - _`:RivCreateLiteralInline` : **LiteralInline**
 
-    **Normal,Insert** :	<C-E>cl
+    *Normal,Insert* :	<C-E>cl
 
-  - _`:RivCreateLiteralBlock` : LiteralBlock
+  - _`:RivCreateLiteralBlock` : **LiteralBlock**
 
-    **Normal,Insert** :	<C-E>cb
+    *Normal,Insert* :	<C-E>cb
 
-  - _`:RivCreateHyperLink` : HyperLink
+  - _`:RivCreateHyperLink` : **HyperLink**
 
-    **Normal,Insert** :	<C-E>ch
+    *Normal,Insert* :	<C-E>ch
 
-  - _`:RivCreateTransition` : Transition
+  - _`:RivCreateTransition` : **Transition**
 
-    **Normal,Insert** :	<C-E>cr
+    *Normal,Insert* :	<C-E>cr
 
-  - _`:RivCreateExplicitMark` : ExplicitMark
+  - _`:RivCreateExplicitMark` : **ExplicitMark**
 
-    **Normal,Insert** :	<C-E>cm
+    *Normal,Insert* :	<C-E>cm
 
-  - _`:RivDeleteFile` : Delete Current File
+  - _`:RivDeleteFile` : **Delete Current File**
 
-    **Normal** :	<C-E>df
+    *Normal* :	<C-E>df
 
 + **Miscs**
 
-  - _`:Riv2HtmlFile` : Convert to html
+  - _`:Riv2HtmlFile` : **Convert to html**
 
-    **Normal** :	<C-E>2hf
+    *Normal* :	<C-E>2hf
 
-  - _`:Riv2HtmlAndBrowse` : Convert to html and browse current file
+  - _`:Riv2HtmlAndBrowse` : **Convert to html and browse current file**
 
-    **Normal** :	<C-E>2hh
+    *Normal* :	<C-E>2hh
 
-  - _`:Riv2HtmlProject` : Convert project to html
+  - _`:Riv2HtmlProject` : **Convert project to html**
 
-    **Normal** :	<C-E>2hp
+    *Normal* :	<C-E>2hp
 
-  - _`:Riv2Odt` : Convert to odt
+  - _`:Riv2Odt` : **Convert to odt**
 
-    **Normal** :	<C-E>2oo
+    *Normal* :	<C-E>2oo
 
-  - _`:Riv2S5` : Convert to S5
+  - _`:Riv2S5` : **Convert to S5**
 
-    **Normal** :	<C-E>2ss
+    *Normal* :	<C-E>2ss
 
 
-  - _`:Riv2Latex` : Convert to Latex
+  - _`:Riv2Latex` : **Convert to Latex**
 
-    **Normal** :	<C-E>2ll
+    *Normal* :	<C-E>2ll
 
-  - _`:Riv2Pdf` : Convert to Pdf
+  - _`:Riv2Pdf` : **Convert to Pdf**
 
-    **Normal** :	<C-E>2pp
+    *Normal* :	<C-E>2pp
 
-  - _`:Riv2BuildPath` : Show Build Path of the project
+  - _`:Riv2BuildPath` : **Show Build Path of the project**
 
-    **Normal** :	<C-E>2b
+    *Normal* :	<C-E>2b
 
-  - _`:RivTestReload` : Force reload Riv and Current Document
+  - _`:RivTestReload` : **Force reload Riv and Current Document**
 
-    **Normal** :	<C-E>t`
+    *Normal* :	<C-E>t`
 
-  - _`:RivHelpTodo` : Show Todo Helper
+  - _`:RivHelpTodo` : **Show Todo Helper**
 
-    **Normal** :	<C-E>ht,<C-E><C-h><C-t>
+    *Normal* :	<C-E>ht,<C-E><C-h><C-t>
 
-  - _`:RivHelpFile` : Show File Helper
+  - _`:RivHelpFile` : **Show File Helper**
 
-    **Normal** :	<C-E>hf,<C-E><C-h><C-f>
+    *Normal* :	<C-E>hf,<C-E><C-h><C-f>
 
-  - _`:RivHelpSection` : Show Section Helper
+  - _`:RivHelpSection` : **Show Section Helper**
 
-    **Normal** :	<C-E>hs
+    *Normal* :	<C-E>hs
 
-  - _`:RivInstruction` : Show Riv Instrucion
+  - _`:RivInstruction` : **Show Riv Instrucion**
 
-  - _`:RivQuickStart` : Show Riv QuickStart
+  - _`:RivQuickStart` : **Show Riv QuickStart**
 
-  - _`:RivPrimer` : Show RST Primer
+  - _`:RivPrimer` : **Show RST Primer**
 
-  - _`:RivCheatSheet` : Show RST CheatSheet
+  - _`:RivCheatSheet` : **Show RST CheatSheet**
 
-  - _`:RivSpecification` : Show RST Specification
+  - _`:RivSpecification` : **Show RST Specification**
 
 Other 
 ------

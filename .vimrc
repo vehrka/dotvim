@@ -126,7 +126,7 @@ set hidden
 " Backspace acts as it should act
 "
 set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+" set whichwrap+=<,>,h,l
 
 " --------------------------------------------------------
 "  Remember info about open buffers on close
