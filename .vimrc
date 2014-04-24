@@ -310,6 +310,20 @@ nmap <leader>a <Esc>:Ack!
 "
 
 "
+" Disable arrow keys
+"
+
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
+
+"
 " WRAP HTML IN SELECTION
 "
 vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
