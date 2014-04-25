@@ -326,6 +326,12 @@ noremap! <Right> <Esc>
 vmap Q gq
 nmap Q gqap
 
+" 
+" Improved block moves
+"
+vnoremap < <gv
+vnoremap > >gv
+
 "
 " WRAP HTML IN SELECTION
 "
