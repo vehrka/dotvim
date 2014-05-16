@@ -54,11 +54,10 @@ set statusline=
 set statusline+=%-3.3n\  " buffer number
 set statusline+=%f\  " filename
 set statusline+=%h%m%r%w " status flags
-set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+set statusline+=\[%{strlen(&ft)?&ft:'none'}]\ " file type
 set statusline+=%=   " right align remainder
-set statusline+=0x%-8B   " character value
-set statusline+=%-14(%l,%c%V%)   " line, character
-set statusline+=%<%P " file position
+set statusline+=%-4(l:%l\ c:%c%V\ w:%{WordCount()}%)\ " line, character
+set statusline+=%<%P\ %L " file position
 set statusline+=%{fugitive#statusline()}
 
 " --------------------------------------------------------
@@ -221,27 +220,6 @@ map <leader>g :GundoToggle<CR>
 "
 map <leader>td <Plug>TaskList
 
-"
-" NERDTree
-"   
-map <F2> :NERDTreeToggle<cr>
-
-"
-" Tag List Toggle
-" 
-map <F3> :TlistToggle<cr>
-
-"
-" NERDCommenter 
-" 
-map <F4> <leader>c<space><cr>
-
-"
-" Vim-Flake8
-"
-" vim-flake mapped by default to <F7> to change uncomment
-" autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
-" 
 
 " 
 " SuperTab
@@ -303,23 +281,65 @@ nmap <leader>a <Esc>:Ack!
 " Gread: This will basically run a git checkout <filename>
 " Gcommit: This will just run git commit. Since its in a vim buffer, you can use keyword completion (Ctrl-N), like test_all<Ctrl-N> to find the method name in your buffer and complete it for the commit message. You can also use + and - on the filenames in the message to stage/unstage them for the commit.
 
+" -------------------------------------------------------
+"  FUNCTIONS
+"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Here begins my automated wordcount addition.
+" http://www.cromwell-intl.com/linux/vim-word-count.html
+" " This combines several ideas from:
+" " http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:word_count="<>"
+function WordCount()
+    return g:word_count
+endfunction
+function UpdateWordCount()
+    let lnum = 1
+    let n =         0
+    while lnum <= line('$')
+        let n = n + len(split(getline(lnum)))
+        let lnum = lnum + 1
+    endwhile
+    let g:word_count = n
+endfunction
+" Update        the count when cursor is idle in command or insert mode.
+" " Update when idle for 1000 msec (default is 4000 msec).
+ set updatetime=1000
+ augroup WordCounter
+    au! CursorHold,CursorHoldI * call UpdateWordCount()
+ augroup END
+
+function! VisualHTMLTagWrap()
+  let tag = input("Tag to wrap block: ")
+  if len(tag) > 0
+    normal `>
+    if &selection == 'exclusive'
+      exe "normal i</".tag.">"
+    else
+      exe "normal a</".tag.">"
+    endif
+    normal `<
+    exe "normal i<".tag.">"
+    normal `<
+  endif
+endfunction
+
+function! MyAutoIndent()
+    set autoindent
+    set smartindent
+endfunction
+map <Leader>ni <Esc>:call MyNOAutoIndent()<CR>
+
+function! MyNOAutoIndent()
+    setl noai nocin nosi inde=
+endfunction
 
 " --------------------------------------------------------
 " Mapping
 "
 
-"
-" Disable arrow keys
-"
-
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
 "
 " EASIER FORMATTING OF PARAGRAPHS
 "
@@ -336,33 +356,11 @@ vnoremap > >gv
 " WRAP HTML IN SELECTION
 "
 vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
-function! VisualHTMLTagWrap()
-  let tag = input("Tag to wrap block: ")
-  if len(tag) > 0
-    normal `>
-    if &selection == 'exclusive'
-      exe "normal i</".tag.">"
-    else
-      exe "normal a</".tag.">"
-    endif
-    normal `<
-    exe "normal i<".tag.">"
-    normal `<
-  endif
-endfunction
 
 "
 " Autoindent mode
 "
 map <Leader>i <Esc>:call MyAutoIndent()<CR>
-function! MyAutoIndent()
-    set autoindent
-    set smartindent
-endfunction
-map <Leader>ni <Esc>:call MyNOAutoIndent()<CR>
-function! MyNOAutoIndent()
-    setl noai nocin nosi inde=
-endfunction
 
 "
 " space scroll in normal mode
@@ -400,16 +398,6 @@ nmap <A-l> :bn<CR>
 noremap <A-j> gT
 noremap <A-k> gt
 
-"
-" F5 to list buffers and choose one
-"
-:nnoremap <F5> :buffers<CR>:buffer<Space>
-
-"
-" To insert timestamp, press F6.
-"
-nmap <F6> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-imap <F6> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
 " --------------------------------------------------------
 "  Disable highlight when <leader><cr> is presed
@@ -426,11 +414,52 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 "
 map <leader>ws :w !sudo tee%<cr>
 
+
+"
+" NERDTree
+"   
+map <F2> :NERDTreeToggle<cr>
+
+"
+" Tag List Toggle
+" 
+map <F3> :TlistToggle<cr>
+
+"
+" NERDCommenter 
+" 
+map <F4> <leader>c<space><cr>
+
+"
+" F5 to list buffers and choose one
+"
+:nnoremap <F5> :buffers<CR>:buffer<Space>
+
+"
+" To insert timestamp, press F6.
+"
+nmap <F6> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F6> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+
+"
+" Vim-Flake8
+"
+" vim-flake mapped by default to <F7> to change uncomment
+" autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
+" 
+
+"
+" Word count
+"
+map <F8> g<C-g>
+
 " --------------------------------------------------------
 " Mapserver sintax
 "
 let mysyntaxfile = "~/.vim/map.vim"
 
+
+"
 " --------------------------------------------------------
 " MACROS
 " ^M es un caracter especial para representar <CR> que se obtiene
