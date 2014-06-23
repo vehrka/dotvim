@@ -174,10 +174,7 @@ endif
 " --------------------------------------------------------
 " set text width only in text files
 "
-autocmd FileType text,rst setlocal textwidth=76 
-au FileType text,rst setlocal textwidth=76 
-au FileType text,rst setlocal cc=77 
-au FileType python setlocal cc=80
+call matchadd('ColorColumn', '\%80v', 100)
 
 " --------------------------------------------------------
 " completition for htmldjango
@@ -203,7 +200,8 @@ autocmd BufReadPost *
 "
 
 "
-" Pathogen
+" Pathogen: the source of plugins
+"
 " -
 filetype off
 call pathogen#infect()
@@ -211,75 +209,143 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 "
-" GundoToggle
+" GundoToggle: enhanced Undo
 "
 map <leader>g :GundoToggle<CR>
 
 "
-" TaskList
+" TaskList: a Task list
 "
 map <leader>td <Plug>TaskList
 
 
 " 
-" SuperTab
+" SuperTab: Tab Completition and Documentation
 "
-" Tab Completition and Documentation
-" use the SuperTab plugin to check the context of the code you are working on and choose the best for the situation
+" use the SuperTab plugin to check the context of the code you are working on 
+" and choose the best for the situation
 "
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 
 "
-" Completition
+" Completition: menu and pydoc enhanced
 "
 " enable the menu and pydoc preview to get the most useful information
 "
 set completeopt=menuone,longest,preview
 
 " 
-" PyDoc
+" PyDoc: documentation pages for python
 "
-" We also enabled the pydoc plugin at the beginning with all the submodules; that gives us the ability to hit <leader>pw when our cursor is on a module and have a new window open with the whole documentation page for it.
+" We also enabled the pydoc plugin at the beginning with all the submodules; 
+" that gives us the ability to hit 
+"
+" <leader>pw 
+"
+" when our cursor is on a module and have a new window open with the whole 
+" documentation page for it.
 "
 
 " 
-" Command-t
+" Commandt: improved searching in projectx
 "
-" To make finding and opening files within your project even easier, we are going to use the command-t plugin.
-" command-t is bound to <leader>t
-" searching only through opened buffers using <leader>b
-" refresh available files with <leader>y
+" To make finding and opening files within your project even easier, we are
+" going to use the command-t plugin.  
+" command-t is bound to 
+"
+" <leader>t
+"
+" searching only through opened buffers using 
+"
+" <leader>b 
+"
+" refresh available files with 
+"
+" <leader>y
 map <leader>y :CommandTFlush<CR>
 
 " 
-" Ropevim
-"  
-" Refactoring and Go to definition
+" Ropevim: Refactoring and Go to definition
+"
 " Ropevim is also a great tool that will allow you to navigate around your code
 "
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
 
 "
-" Ack
+" Ack: Searching 
 "
-" Searching
-" Ack is similar to grep, but much better in my opinion. You can fuzzy text search for anything in your code (variable name, class, method, etc) and it'll give you a list of files and line numbers where they are defined
+" Ack is similar to grep, but much better in my opinion. You
+" can fuzzy text search for anything in your code (variable name, class,
+" method, etc) and it'll give you a list of files and line numbers where they
+" are defined
 "
 nmap <leader>a <Esc>:Ack!
 
 "
-" Git
+" Git: Integration with Git Git.
 "
-" Integration with Git
-" Git.vim will provide us syntax highlighting for git configuration files
-" fugitive provides a great interface for interacting with git <-- Added to status line
+" vim will provide us syntax highlighting for
+" git configuration files fugitive provides a great interface for interacting
+" with git <-- Added to status line
 "
-" Gblame: This allows you to view a line by line comparison of who the last person to touch that line of code is.
-" Gwrite: This will stage your file for commit, basically doing git add <filename>
-" Gread: This will basically run a git checkout <filename>
-" Gcommit: This will just run git commit. Since its in a vim buffer, you can use keyword completion (Ctrl-N), like test_all<Ctrl-N> to find the method name in your buffer and complete it for the commit message. You can also use + and - on the filenames in the message to stage/unstage them for the commit.
+" Gblame : This allows you to view a line by line comparison of who the last
+" person to touch that line of code is.  
+"
+" Gwrite : This will stage your file
+" for commit, basically doing git add <filename> 
+"
+" Gread : This will basically
+" run a git checkout <filename> 
+"
+" Gcommit : This will just run git commit. Since
+" its in a vim buffer, you can use keyword completion (Ctrl-N), like
+" test_all<Ctrl-N> to find the method name in your buffer and complete it for
+" the commit message. You can also use + and - on the filenames in the message
+" to stage/unstage them for the commit.
+
+"
+" List Transformation: convert a comma separated selection/paragraph into a list
+"
+nmap <leader>l :call ListTrans_toggle_format()<CR>
+vmap <leader>l :call ListTrans_toggle_format('visual')<CR>
+
+" 
+" Vis: Extended visual Modes
+" 
+" Apply a command only to selected Block
+"
+" :B cmd
+"
+" Search only on selected Block
+"
+" :S 
+
+"
+" Dragvisuals: Block awesomeness
+"
+" Use cursor keys to move blocks arround
+"
+vmap <expr> <LEFT> DVB_Drag('left')
+vmap <expr> <RIGHT> DVB_Drag('right')
+vmap <expr> <DOWN> DVB_Drag('down')
+vmap <expr> <UP> DVB_Drag('up')
+
+" Use D to duplicate a block
+vmap <expr> D DVB_Duplicate()
+
+"
+" VimFlake8: Flake8 for Vim
+"
+" vim-flake mapped by default to 
+"
+" <F7> 
+"
+" to change uncomment
+"
+" autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
+" 
 
 " -------------------------------------------------------
 "  FUNCTIONS
@@ -290,7 +356,7 @@ nmap <leader>a <Esc>:Ack!
 " http://www.cromwell-intl.com/linux/vim-word-count.html
 " " This combines several ideas from:
 " " http://stackoverflow.com/questions/114431/fast-word-count-function-in-vim
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:word_count="<>"
 function WordCount()
     return g:word_count
@@ -330,7 +396,6 @@ function! MyAutoIndent()
     set autoindent
     set smartindent
 endfunction
-map <Leader>ni <Esc>:call MyNOAutoIndent()<CR>
 
 function! MyNOAutoIndent()
     setl noai nocin nosi inde=
@@ -361,6 +426,7 @@ vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
 " Autoindent mode
 "
 map <Leader>i <Esc>:call MyAutoIndent()<CR>
+map <Leader>ni <Esc>:call MyNOAutoIndent()<CR>
 
 "
 " space scroll in normal mode
@@ -372,6 +438,23 @@ noremap <S-space> <C-B>
 " In visual mode C-r gets the selected text and ofers replace
 "
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" --------------------------------------------------------
+" I never want regular Visual mode
+"
+nnoremap    v   <C-V>
+nnoremap <C-V>     v
+vnoremap    v   <C-V>
+vnoremap <C-V>     v
+
+" Square up visual selections...
+set virtualedit=block
+
+" Make BS/DEL work as expected in visual modes (i.e. delete the selected text)...
+vmap <BS> x
+
+" Make vaa select the entire file...
+vmap aa VGo1G
 
 " Window Splits Just a reminder
 " Vertical Split : Ctrl+w + v
@@ -398,7 +481,6 @@ nmap <A-l> :bn<CR>
 noremap <A-j> gT
 noremap <A-k> gt
 
-
 " --------------------------------------------------------
 "  Disable highlight when <leader><cr> is presed
 "
@@ -414,6 +496,10 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 "
 map <leader>ws :w !sudo tee%<cr>
 
+" --------------------------------------------------------
+" No more :w
+"
+map <c-s> :w<cr>
 
 "
 " NERDTree
@@ -442,21 +528,15 @@ nmap <F6> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 imap <F6> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
 "
-" Vim-Flake8
-"
-" vim-flake mapped by default to <F7> to change uncomment
-" autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
-" 
-
-"
 " Word count
 "
 map <F8> g<C-g>
 
-" --------------------------------------------------------
-" Mapserver sintax
 "
-let mysyntaxfile = "~/.vim/map.vim"
+" How many times
+"
+nmap <leader>s :%s///g<LEFT><LEFT><LEFT>
+vmap <leader>s :s///g<LEFT><LEFT><LEFT>
 
 
 "
@@ -477,6 +557,23 @@ let @e='JJhhhhhvllllllldi'
 syntax enable
 filetype on
 filetype plugin indent on
+
+" syntax in diff
+augroup PatchDiffHighlight
+    autocmd!
+    autocmd FileType diff syntax enable
+augroup END
+
+" --------------------------------------------------------
+"  Shady Characters
+"
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+    set list
+
+" --------------------------------------------------------
+" Mapserver syntax
+"
+let mysyntaxfile = "~/.vim/map.vim"
 
 " --------------------------------------------------------
 "  Local vimrc
