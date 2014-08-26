@@ -10,8 +10,8 @@ set nocp
 " --------------------------------------------------------
 " Remapping the leader
 "
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 
 " --------------------------------------------------------
 " Automatically indent when adding a curly bracket, etc.
@@ -43,8 +43,7 @@ set encoding=utf-8
 " Set color scheme that I like.
 "
 set t_Co=256
-colorscheme desert
-set background=dark
+colorscheme torte
 
 " --------------------------------------------------------
 " Status line
@@ -166,6 +165,7 @@ if has("gui_running")
     "  GUI tab label
     "
     set guitablabel=%M\ %t
+    colorscheme desert
 endif
 
 " --------------------------------------------------------
@@ -417,6 +417,27 @@ nmap Q gqap
 vnoremap < <gv
 vnoremap > >gv
 
+" --------------------------------------------------------
+"  Copy and paste to system clipboard
+"
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>p "+p
+vmap <Leader>p "+p
+vmap <Leader>p "+p
+
+" Autobatically jump to end of text you pasted
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+" Type 12<Enter> to go to line 12
+" <Enter> go to end of file
+" <BS> go to begining
+nnoremap <CR> G
+nnoremap <BS> gg
+
 "
 " WRAP HTML IN SELECTION
 "
@@ -446,6 +467,9 @@ nnoremap    v   <C-V>
 nnoremap <C-V>     v
 vnoremap    v   <C-V>
 vnoremap <C-V>     v
+
+" Enter line visual mode with double space
+nmap <Leader><Leader> V
 
 " Square up visual selections...
 set virtualedit=block
@@ -501,6 +525,25 @@ map <leader>ws :w !sudo tee%<cr>
 "
 map <c-s> :w<cr>
 
+
+"
+" How many times
+"
+nmap <leader>s :%s///g<LEFT><LEFT><LEFT>
+vmap <leader>s :s///g<LEFT><LEFT><LEFT>
+
+" --------------------------------------------------------
+"  Local vimrc
+"
+map <leader>lv :source .lvimrc<cr>
+
+" --------------------------------------------------------
+" Edit vimrc
+"
+map <leader>vrc :e ~/.vimrc<cr>
+
+" --------------------------------------------------------
+"  Function Keys Mappings
 "
 " NERDTree
 "   
@@ -532,14 +575,7 @@ imap <F6> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 "
 map <F8> g<C-g>
 
-"
-" How many times
-"
-nmap <leader>s :%s///g<LEFT><LEFT><LEFT>
-vmap <leader>s :s///g<LEFT><LEFT><LEFT>
 
-
-"
 " --------------------------------------------------------
 " MACROS
 " ^M es un caracter especial para representar <CR> que se obtiene
@@ -576,6 +612,6 @@ exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 let mysyntaxfile = "~/.vim/map.vim"
 
 " --------------------------------------------------------
-"  Local vimrc
-"
-map <leader>lv :source .lvimrc<cr>
+"  References
+"  http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+
