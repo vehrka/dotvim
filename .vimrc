@@ -210,11 +210,12 @@ autocmd BufReadPost *
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'Rykka/riv.vim'
 Plugin 'ervandew/supertab'
 Plugin 'fs111/pydoc.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'msanders/snipmate.vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/Flake8-vim'
