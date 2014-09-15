@@ -211,6 +211,7 @@ autocmd BufReadPost *
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'Rykka/riv.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'fs111/pydoc.vim'
 Plugin 'mileszs/ack.vim'
