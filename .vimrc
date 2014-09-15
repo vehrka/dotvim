@@ -6,6 +6,7 @@
 " For Network oriented work set nocompatible mode
 "
 set nocp
+filetype off
 
 " --------------------------------------------------------
 " Remapping the leader
@@ -141,6 +142,13 @@ set viminfo^=%
 set backupdir=~/.vim/vim-tmp,~/.tmp,~/tmp,~/var/tmp,/tmp
 set directory=~/.vim/vim-tmp,~/.tmp,~/tmp,~/var/tmp,/tmp
 
+"
+" Completition: menu and pydoc enhanced
+"
+" enable the menu and pydoc preview to get the most useful information
+"
+set completeopt=menuone,longest,preview
+
 " --------------------------------------------------------
 "  GUI options
 "
@@ -199,27 +207,23 @@ autocmd BufReadPost *
 " Plugins
 "
 
-"
-" Pathogen: the source of plugins
-"
-" -
-filetype off
-call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'ervandew/supertab'
+Plugin 'fs111/pydoc.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'msanders/snipmate.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/Flake8-vim'
+Plugin 'wincent/command-t'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 "
-" GundoToggle: enhanced Undo
-"
-map <leader>g :GundoToggle<CR>
-
-"
-" TaskList: a Task list
-"
-map <leader>td <Plug>TaskList
-
-
-" 
 " SuperTab: Tab Completition and Documentation
 "
 " use the SuperTab plugin to check the context of the code you are working on 
@@ -228,12 +232,6 @@ map <leader>td <Plug>TaskList
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
 
-"
-" Completition: menu and pydoc enhanced
-"
-" enable the menu and pydoc preview to get the most useful information
-"
-set completeopt=menuone,longest,preview
 
 " 
 " PyDoc: documentation pages for python
@@ -247,7 +245,7 @@ set completeopt=menuone,longest,preview
 " documentation page for it.
 "
 
-" 
+"
 " Commandt: improved searching in projectx
 "
 " To make finding and opening files within your project even easier, we are
@@ -264,14 +262,6 @@ set completeopt=menuone,longest,preview
 "
 " <leader>y
 map <leader>y :CommandTFlush<CR>
-
-" 
-" Ropevim: Refactoring and Go to definition
-"
-" Ropevim is also a great tool that will allow you to navigate around your code
-"
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
 
 "
 " Ack: Searching 
@@ -452,7 +442,7 @@ map <Leader>ni <Esc>:call MyNOAutoIndent()<CR>
 "
 " space scroll in normal mode
 "
-noremap <space> <C-F>
+noremap <C-space> <C-F>
 noremap <S-space> <C-B>
 
 "
@@ -548,11 +538,6 @@ map <leader>vrc :e ~/.vimrc<cr>
 " NERDTree
 "   
 map <F2> :NERDTreeToggle<cr>
-
-"
-" Tag List Toggle
-" 
-map <F3> :TlistToggle<cr>
 
 "
 " NERDCommenter 
