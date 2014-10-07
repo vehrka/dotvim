@@ -149,10 +149,7 @@ set directory=~/.vim/vim-tmp,~/.tmp,~/tmp,~/var/tmp,/tmp
 "
 set completeopt=menuone,longest,preview
 
-" --------------------------------------------------------
-"  GUI options
-"
-if has("gui_running")
+if has('gui')
     " --------------------------------------------------------
     " Set font
     "
@@ -222,6 +219,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'msanders/snipmate.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
+Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/Flake8-vim'
 Plugin 'wincent/command-t'
@@ -428,12 +426,6 @@ vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
 
-" Type 12<Enter> to go to line 12
-" <Enter> go to end of file
-" <BS> go to begining
-nnoremap <CR> G
-nnoremap <BS> gg
-
 "
 " WRAP HTML IN SELECTION
 "
@@ -531,7 +523,7 @@ vmap <leader>s :s///g<LEFT><LEFT><LEFT>
 " --------------------------------------------------------
 "  Local vimrc
 "
-map <leader>lv :source .lvimrc<cr>
+map <leader>lvrc :source .lvimrc<cr>
 
 " --------------------------------------------------------
 " Edit vimrc
@@ -544,6 +536,8 @@ map <leader>vrc :e ~/.vimrc<cr>
 " NERDTree
 "   
 map <F2> :NERDTreeToggle<cr>
+
+" NERD Tree to open automatically whenever you fire Vim or open a new buffer. Add these lines to /etc/vim/vimrc or ~/.vimrc:
 
 "
 " NERDCommenter 
