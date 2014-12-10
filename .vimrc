@@ -211,7 +211,7 @@ autocmd BufReadPost *
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'Rykka/riv.vim'
+Bundle 'Rykka/riv.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'fs111/pydoc.vim'
@@ -222,7 +222,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/Flake8-vim'
-Plugin 'wincent/command-t'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -248,24 +247,6 @@ let g:SuperTabDefaultCompletionType = "context"
 " when our cursor is on a module and have a new window open with the whole 
 " documentation page for it.
 "
-
-"
-" Commandt: improved searching in projectx
-"
-" To make finding and opening files within your project even easier, we are
-" going to use the command-t plugin.  
-" command-t is bound to 
-"
-" <leader>t
-"
-" searching only through opened buffers using 
-"
-" <leader>b 
-"
-" refresh available files with 
-"
-" <leader>y
-map <leader>y :CommandTFlush<CR>
 
 "
 " Ack: Searching 
@@ -416,12 +397,10 @@ vnoremap > >gv
 "
 vmap <Leader>y "+y
 vmap <Leader>d "+d
+nmap <Leader>y "+y
 nmap <Leader>p "+p
-nmap <Leader>p "+p
-vmap <Leader>p "+p
-vmap <Leader>p "+p
 
-" Autobatically jump to end of text you pasted
+" Automatically jump to end of text you pasted
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
@@ -434,8 +413,8 @@ vmap <Leader>w <Esc>:call VisualHTMLTagWrap()<CR>
 "
 " Autoindent mode
 "
-map <Leader>i <Esc>:call MyAutoIndent()<CR>
-map <Leader>ni <Esc>:call MyNOAutoIndent()<CR>
+map <Leader>ai <Esc>:call MyAutoIndent()<CR>
+map <Leader>nai <Esc>:call MyNOAutoIndent()<CR>
 
 "
 " space scroll in normal mode
@@ -455,9 +434,6 @@ nnoremap    v   <C-V>
 nnoremap <C-V>     v
 vnoremap    v   <C-V>
 vnoremap <C-V>     v
-
-" Enter line visual mode with double space
-nmap <Leader><Leader> V
 
 " Square up visual selections...
 set virtualedit=block
