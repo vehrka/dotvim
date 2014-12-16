@@ -497,7 +497,7 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 " --------------------------------------------------------
 "  Sudo tee trick
 "
-map <leader>ws :w !sudo tee%<cr>
+map <leader>ws :w !sudo tee %<cr>
 
 " --------------------------------------------------------
 " No more :w
