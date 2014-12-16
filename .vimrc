@@ -172,6 +172,8 @@ if has('gui')
     "  GUI tab label
     "
     set guitablabel=%M\ %t
+    " Another colorscheme
+    colorscheme slate
 endif
 
 " --------------------------------------------------------
@@ -224,6 +226,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/Flake8-vim'
+"Plugin 'brookhong/DBGPavim'
+"Plugin 'xolox/vim-session'
+"Plugin 'xolox/vim-misc'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -462,14 +467,22 @@ map <c-h> <c-w>h
 "
 " Added by Tim to map alt-left/right to flip through buffers
 "
-nmap <A-h> :bp<CR>
-nmap <A-l> :bn<CR>
+if has('gui')
+    nmap <A-h> :bp<CR>
+    nmap <A-l> :bn<CR>
+else
+    nmap <Esc>h :bp<cr>
+    nmap <Esc>l :bn<cr>
+endif
+
 
 "
 " move between tabs
 "
-noremap <A-j> gT
-noremap <A-k> gt
+"noremap <A-j> gT
+"noremap <A-k> gt
+"nmap <Esc>[k :bp<cr>
+"nmap <Esc>[l :bp<cr>
 
 " --------------------------------------------------------
 "  Disable highlight when <leader><cr> is presed
