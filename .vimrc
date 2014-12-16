@@ -40,11 +40,7 @@ set scrolloff=10
 "
 set encoding=utf-8
 
-" --------------------------------------------------------
-" Set color scheme that I like.
-"
-set t_Co=256
-colorscheme torte
+
 
 " --------------------------------------------------------
 " Status line
@@ -149,6 +145,12 @@ set directory=~/.vim/vim-tmp,~/.tmp,~/tmp,~/var/tmp,/tmp
 "
 set completeopt=menuone,longest,preview
 
+" --------------------------------------------------------
+" Set color scheme that I like.
+"
+set t_Co=256
+colorscheme torte
+
 if has('gui')
     " --------------------------------------------------------
     " Set font
@@ -170,7 +172,6 @@ if has('gui')
     "  GUI tab label
     "
     set guitablabel=%M\ %t
-    colorscheme desert
 endif
 
 " --------------------------------------------------------
@@ -212,6 +213,7 @@ autocmd BufReadPost *
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Bundle 'Rykka/riv.vim'
+Bundle 'kien/ctrlp.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'fs111/pydoc.vim'
@@ -505,6 +507,12 @@ map <leader>lvrc :source .lvimrc<cr>
 " Edit vimrc
 "
 map <leader>vrc :e ~/.vimrc<cr>
+
+" --------------------------------------------------------
+"  Activate/Deactivate Cursor line
+"
+map <leader>cl :set cursorline!<cr>
+
 
 " --------------------------------------------------------
 "  Function Keys Mappings
