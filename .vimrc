@@ -148,10 +148,8 @@ set completeopt=menuone,longest,preview
 " --------------------------------------------------------
 " Set color scheme that I like.
 "
-set t_Co=256
-colorscheme torte
 
-if has('gui')
+if has('gui_running')
     " --------------------------------------------------------
     " Set font
     "
@@ -175,6 +173,9 @@ if has('gui')
     " Another colorscheme
     colorscheme slate
 endif
+
+set t_Co=256
+colorscheme torte
 
 " --------------------------------------------------------
 " Autocomands
@@ -467,7 +468,7 @@ map <c-h> <c-w>h
 "
 " Added by Tim to map alt-left/right to flip through buffers
 "
-if has('gui')
+if has('gui_running')
     nmap <A-h> :bp<CR>
     nmap <A-l> :bn<CR>
 else
