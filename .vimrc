@@ -177,13 +177,13 @@ endif
 set t_Co=256
 colorscheme torte
 
+highlight OverLength ctermbg=darkblue ctermfg=white guibg=#592929
+match OverLength /\%80v.\+/
+
 " --------------------------------------------------------
 " Autocomands
 
 " --------------------------------------------------------
-" set text width only in text files
-"
-call matchadd('ColorColumn', '\%80v', 100)
 
 " --------------------------------------------------------
 " completition for htmldjango
@@ -221,7 +221,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'fs111/pydoc.vim'
 Plugin 'mileszs/ack.vim'
-Plugin 'msanders/snipmate.vim'
+"Plugin 'msanders/snipmate.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'

@@ -49,9 +49,6 @@
 [submodule "bundle/riv"]
 	path = bundle/riv
 	url = https://github.com/Rykka/riv.vim
-[submodule "snippets"]
-	path = snippets
-	url = https://github.com/braidn/snipmate-snippets.git
 [submodule "bundle/vim-ipython"]
 	path = bundle/vim-ipython
 	url = https://github.com/ivanov/vim-ipython.git
