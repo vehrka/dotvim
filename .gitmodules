@@ -52,3 +52,6 @@
 [submodule "bundle/vim-ipython"]
 	path = bundle/vim-ipython
 	url = https://github.com/ivanov/vim-ipython.git
+[submodule "snipmate-snippets"]
+	path = snipmate-snippets
+	url = git@github.com:vehrka/snipmate-snippets.git
