@@ -1,2 +1,0 @@
-localvimrc.vba: call delete('/home/pferrer/.vim/plugin/localvimrc.vim')|call delete('/home/pferrer/.vim/doc/localvimrc.txt')
-vis.vba: call delete('/home/pferrer/.vim/plugin/visPlugin.vim')|call delete('/home/pferrer/.vim/autoload/vis.vim')|call delete('/home/pferrer/.vim/plugin/cecutil.vim')|call delete('/home/pferrer/.vim/doc/vis.txt')
