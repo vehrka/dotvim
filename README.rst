@@ -6,6 +6,8 @@ Renewed dotvim experience using vim.spf13 distribution
 
 http://vim.spf13.com/
 
+:Version: 1
+
 Easy install
 ============
 
@@ -29,4 +31,8 @@ Customization
 
 Create symbolic links to the *.vimrc.local* and *.vimrc.before.local* and *.vimrc.bundles.local* in your $HOME.
 
+Changelog
+=========
 
+:v1: Added pre-spf13
+:v0: Version pre-spf13
