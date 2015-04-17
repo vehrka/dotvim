@@ -7,6 +7,8 @@ Introducción
 
 Esto es solo mi configuración de VIM, puede que te parezca interesante, puede que no ... pero es lo que hay.
 
+Version: 0
+
 Instalación
 =================
 
