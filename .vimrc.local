@@ -33,11 +33,12 @@
         "
         set guitablabel=%M\ %t
         " Another colorscheme
-        colorscheme slate
+    else
+        set t_Co=256
     endif
+    set background=dark
+    colorscheme solarized
 
-    set t_Co=256
-    colorscheme torte
 
 " }
 
@@ -93,11 +94,14 @@
     "
     " NERDCommenter
     "
-    map <F4> <leader>c<space><cr>
+    map <F4> <leader>c<space>
 
     "
     " F5 to list buffers and choose one
     "
     :nnoremap <F5> :buffers<CR>:buffer<Space>
+
+    " Change mapping to RIV"
+    nunmap <C-e>
 
 " }
