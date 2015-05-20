@@ -36,7 +36,7 @@
     else
         set t_Co=256
     endif
-    set background=dark
+    set background=light
     colorscheme solarized
 
 
@@ -103,5 +103,18 @@
 
     " Change mapping to RIV"
     nunmap <C-e>
+
+" }
+
+" Functions {
+
+" Vertical Split Buffer Function
+" http://stackoverflow.com/questions/4571494/open-a-buffer-as-a-vertical-split-in-vim
+function VerticalSplitBuffer(buffer)
+    execute "vert belowright sb" a:buffer
+endfunction
+
+" Vertical Split Buffer Mapping
+command -nargs=1 Vbuffer call VerticalSplitBuffer(<f-args>)
 
 " }
