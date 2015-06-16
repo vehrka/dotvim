@@ -59,6 +59,14 @@
         nmap <Esc>l :bn<cr>
     endif
 
+    " --------------------------------------------------------
+    " I never want regular Visual mode
+    "
+    nnoremap    v   <C-V>
+    nnoremap <C-V>     v
+    vnoremap    v   <C-V>
+    vnoremap <C-V>     v
+
 
     " Come on... Maximizing a window when arriving??
     "
@@ -88,7 +96,7 @@
     vmap aa VGo1G
 
     " NERDTree
-    "   
+    "
     map <F2> :NERDTreeToggle<cr>
 
     "
@@ -104,6 +112,16 @@
     " Change mapping to RIV"
     nunmap <C-e>
 
+    " Change mapping for the visual selection
+    nunmap gv
+
+    "
+    " change mapping for deactivate highlight
+    if exists('g:spf13_clear_search_highlight')
+        nmap <silent> <leader><cr> :nohlsearch<CR>
+    else
+        nmap <silent> <leader><cr> :set invhlsearch<CR>
+    endif
 " }
 
 " Functions {
