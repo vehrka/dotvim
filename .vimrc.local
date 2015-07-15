@@ -4,7 +4,8 @@
     set nospell
     "Snipmate author
     let g:snips_author = 'Pedro-Juan Ferrer <vehrka@gmail.com>'
-
+    " No session autosave
+    let g:session_autosave = 'no'
 
 " }
 " GUI {
