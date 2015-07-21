@@ -114,7 +114,7 @@
     nunmap <C-e>
 
     " Change mapping for the visual selection
-    nunmap gv
+    "nunmap gv
 
     "
     " change mapping for deactivate highlight
