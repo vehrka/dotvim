@@ -45,6 +45,10 @@
 
 " Key (re)Mappings {
 
+    " Mapping the leader to space
+    "
+    let mapleader = " "
+
     " How many times
     "
     nmap <leader>s :%s///g<LEFT><LEFT><LEFT>
@@ -112,9 +116,6 @@
 
     " Change mapping to RIV"
     nunmap <C-e>
-
-    " Change mapping for the visual selection
-    "nunmap gv
 
     "
     " change mapping for deactivate highlight
