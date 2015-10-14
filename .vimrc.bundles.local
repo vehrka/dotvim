@@ -1,4 +1,4 @@
 Bundle "myusuf3/numbers.vim"
-Bundle 'Rykka/riv.vim'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
+Bundle 'Rykka/riv.vim'

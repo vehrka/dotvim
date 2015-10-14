@@ -2,6 +2,7 @@
 
     "Un set Spelling
     set nospell
+    set number
     "Snipmate author
     let g:snips_author = 'Pedro-Juan Ferrer <vehrka@gmail.com>'
     " No session autosave
@@ -33,13 +34,11 @@
         "  GUI tab label
         "
         set guitablabel=%M\ %t
-        " Another colorscheme
     else
         set t_Co=256
     endif
     set background=light
     colorscheme solarized
-
 
 " }
 
@@ -63,6 +62,15 @@
         nmap <Esc>h :bp<cr>
         nmap <Esc>l :bn<cr>
     endif
+
+    " --------------------------------------------------------
+    " I never want regular Visual mode
+    "
+    nnoremap    v   <C-V>
+    nnoremap <C-V>     v
+    vnoremap    v   <C-V>
+    vnoremap <C-V>     v
+
 
     " --------------------------------------------------------
     " I never want regular Visual mode
