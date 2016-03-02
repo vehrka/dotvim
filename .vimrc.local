@@ -40,6 +40,7 @@
     "set background=light
     colorscheme jelleybeans
 
+    set colorcolumn=79
 " }
 
 " Key (re)Mappings {
@@ -70,16 +71,6 @@
     nnoremap <C-V>     v
     vnoremap    v   <C-V>
     vnoremap <C-V>     v
-
-
-    " --------------------------------------------------------
-    " I never want regular Visual mode
-    "
-    nnoremap    v   <C-V>
-    nnoremap <C-V>     v
-    vnoremap    v   <C-V>
-    vnoremap <C-V>     v
-
 
     " Come on... Maximizing a window when arriving??
     "
@@ -132,6 +123,9 @@
     else
         nmap <silent> <leader><cr> :set invhlsearch<CR>
     endif
+    
+    " Launching tagbar
+    map <leader>tt :TagbarToggle<cr>
 " }
 
 " Functions {
