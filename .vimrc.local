@@ -37,8 +37,8 @@
     else
         set t_Co=256
     endif
-    set background=light
-    colorscheme solarized
+    "set background=light
+    colorscheme jelleybeans
 
 " }
 
