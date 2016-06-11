@@ -37,10 +37,9 @@
     else
         set t_Co=256
     endif
-    "set background=light
-    colorscheme jelleybeans
+    set background=light
+    colorscheme solarized
 
-    set colorcolumn=79
 " }
 
 " Key (re)Mappings {
@@ -72,6 +71,16 @@
     vnoremap    v   <C-V>
     vnoremap <C-V>     v
 
+
+    " --------------------------------------------------------
+    " I never want regular Visual mode
+    "
+    nnoremap    v   <C-V>
+    nnoremap <C-V>     v
+    vnoremap    v   <C-V>
+    vnoremap <C-V>     v
+
+
     " Come on... Maximizing a window when arriving??
     "
     map <C-J> <C-W>j
@@ -100,18 +109,17 @@
     vmap aa VGo1G
 
     " NERDTree
-    "
-    map <F2> :NERDTreeToggle<cr>
+    map <leader>t :NERDTreeToggle<cr>
 
     "
     " NERDCommenter
     "
-    map <F4> <leader>c<space>
+    map <leader>m <leader>c<space>
 
     "
     " F5 to list buffers and choose one
     "
-    :nnoremap <F5> :buffers<CR>:buffer<Space>
+    :nnoremap <leader>b :buffers<CR>:buffer<Space>
 
     " Change mapping to RIV"
     nunmap <C-e>
@@ -123,9 +131,6 @@
     else
         nmap <silent> <leader><cr> :set invhlsearch<CR>
     endif
-    
-    " Launching tagbar
-    map <leader>tt :TagbarToggle<cr>
 " }
 
 " Functions {
