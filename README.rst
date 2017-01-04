@@ -34,7 +34,7 @@ Create symbolic links to the *.vimrc.local* and *.vimrc.before.local* and *.vimr
 Changelog
 =========
 
-:v1.2: Change vsibility of some files
+:v1.2: Change vsibility of some files and added CSV plugin
 :v1.1: MBA version file
 :v1: Added pre-spf13
 :v0: Version pre-spf13
