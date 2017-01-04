@@ -37,8 +37,7 @@
     else
         set t_Co=256
     endif
-    set background=light
-    colorscheme solarized
+    colorscheme molokai
 
 " }
 
@@ -109,17 +108,17 @@
     vmap aa VGo1G
 
     " NERDTree
-    map <leader>t :NERDTreeToggle<cr>
+    map <F2> :NERDTreeToggle<cr>
 
     "
     " NERDCommenter
     "
-    map <leader>m <leader>c<space>
+    map <F4> <leader>c<space>
 
     "
     " F5 to list buffers and choose one
     "
-    :nnoremap <leader>b :buffers<CR>:buffer<Space>
+    :nnoremap <F5> :buffers<CR>:buffer<Space>
 
     " Change mapping to RIV"
     nunmap <C-e>
