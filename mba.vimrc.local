@@ -52,6 +52,9 @@
     nmap <leader>s :%s///g<LEFT><LEFT><LEFT>
     vmap <leader>s :s///g<LEFT><LEFT><LEFT>
 
+    " Remove trailing spaces
+    nmap <leader>t :%s/ \+$//g<CR>
+
     " Added by Tim to map alt-left/right to flip through buffers
     "
     if has('gui_running')
@@ -143,4 +146,20 @@ endfunction
 " Vertical Split Buffer Mapping
 command -nargs=1 Vbuffer call VerticalSplitBuffer(<f-args>)
 
+" }
+
+" Autocommands {
+
+" For CSV plugin
+"
+autocmd BufNewFile,BufRead *.csv setf csv
+autocmd BufNewFile,BufRead *.tsv setf csv
+autocmd BufNewFile,BufRead *.tsv Delimiter \t
+autocmd BufNewFile,BufRead *.tsv setlocal ts=20 sw=25
+" }
+
+" For XML syntax
+"
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
 " }
