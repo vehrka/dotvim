@@ -6,8 +6,8 @@ Renewed dotvim experience using vim.spf13 distribution
 
 http://vim.spf13.com/
 
-:Version: 1.2
-:Date: 2016-09-27
+:Version: 1.2.2
+:Date: 2017-07-10
 
 Easy install
 ============
