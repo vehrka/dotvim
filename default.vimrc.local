@@ -54,6 +54,9 @@
     nmap <leader>s :%s///g<LEFT><LEFT><LEFT>
     vmap <leader>s :s///g<LEFT><LEFT><LEFT>
 
+    nmap <leader>t :%s/ \+$//g<cr>
+    vmap <leader>t :s/ \+$//g<cr>
+
     " Added by Tim to map alt-left/right to flip through buffers
     "
     if has('gui_running')
@@ -123,7 +126,7 @@
     else
         nmap <silent> <leader><cr> :set invhlsearch<CR>
     endif
-    
+
     " Launching tagbar
     map <leader>tt :TagbarToggle<cr>
 " }
