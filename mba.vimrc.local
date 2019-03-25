@@ -1,130 +1,184 @@
-" General {
+"
+" Remapping the leader
+"
+let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 
-    "Un set Spelling
-    set nospell
-    set number
-    "Snipmate author
-    let g:snips_author = 'Pedro-Juan Ferrer <vehrka@gmail.com>'
-    " No session autosave
-    let g:session_autosave = 'no'
+" Automatically indent when adding a curly bracket, etc.
+"
+set smartindent
+set autoindent
 
-" }
-" GUI {
+" Syntax
+"
+syntax on
 
-    " Set color scheme that I like.
-    "
-    if has('gui_running')
-        " --------------------------------------------------------
-        " Set font
-        "
-        set guifont=DejaVu\ Sans\ Mono\ 12
-        " --------------------------------------------------------
-        " Remove Toobar in gui
-        "
-        set guioptions-=T
-        " --------------------------------------------------------
-        " Remove menu bar in gui
-        "
-        set guioptions-=m
-        " --------------------------------------------------------
-        "  Add tab pages
-        "
-        set guioptions+=e
-        " --------------------------------------------------------
-        "  GUI tab label
-        "
-        set guitablabel=%M\ %t
-    else
-        set t_Co=256
-    endif
-    colorscheme molokai
+" This is the official Python convention
+"
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+set smarttab
 
-" }
+" Use UTF-8.
+"
+set encoding=utf-8
 
-" Key (re)Mappings {
+" turn on line numbers
+"
+set number
+set numberwidth=5
 
-    " Mapping the leader to space
-    "
-    let mapleader = " "
+set nocompatible              " be iMproved, required
+set laststatus=2
 
-    " How many times
-    "
-    nmap <leader>s :%s///g<LEFT><LEFT><LEFT>
-    vmap <leader>s :s///g<LEFT><LEFT><LEFT>
+set backspace=indent,eol,start  " Backspace for dummies
+set linespace=0                 " No extra spaces between rows
+set showmatch                   " Show matching brackets/parenthesis
+set incsearch                   " Find as you type search
+set hlsearch                    " Highlight search terms
+set winminheight=0              " Windows can be 0 line high
+set ignorecase                  " Case insensitive search
+set smartcase                   " Case sensitive when uc present
+set wildmenu                    " Show list instead of just completing
+set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
+set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+set scrolljump=5                " Lines to scroll when cursor leaves screen
+set scrolloff=3                 " Minimum lines to keep above and below cursor
+set foldenable                  " Auto fold code
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
-    " Remove trailing spaces
-    nmap <leader>t :%s/ \+$//g<CR>
+filetype off                  " required
 
-    " Added by Tim to map alt-left/right to flip through buffers
-    "
-    if has('gui_running')
-        nmap <A-h> :bp<CR>
-        nmap <A-l> :bn<CR>
-    else
-        nmap <Esc>h :bp<cr>
-        nmap <Esc>l :bn<cr>
-    endif
+" Put backup and temporary files where they don't bother
+"
+set backupdir=~/.vim/vim-tmp,~/.tmp,~/tmp,~/var/tmp,/tmp
+set directory=~/.vim/vim-tmp,~/.tmp,~/tmp,~/var/tmp,/tmp
 
-    " --------------------------------------------------------
-    " I never want regular Visual mode
-    "
-    nnoremap    v   <C-V>
-    nnoremap <C-V>     v
-    vnoremap    v   <C-V>
-    vnoremap <C-V>     v
+"  Copy and paste to system clipboard
+"
+set clipboard=unnamedplus
+
+if has('gui_running')
+    set guifont=IBM\ Plex\ Mono\ 11
+    set guioptions-=T
+    set guioptions-=m
+    set guioptions+=e
+    set guioptions+=a
+    set guitablabel=%M\ %t
+else
+    set t_Co=256
+endif
+
+set shortmess+=filmnrxoOtT
+set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
+set virtualedit=onemore
+set history=1000
+set spell
+set hidden 
 
 
-    " Come on... Maximizing a window when arriving??
-    "
-    map <C-J> <C-W>j
-    map <C-K> <C-W>k
-    map <C-L> <C-W>l
-    map <C-H> <C-W>h
+" Mapping
+"
 
-    "
-    " EASIER FORMATTING OF PARAGRAPHS
-    "
-    vmap Q gq
-    nmap Q gqap
+"
+" EASIER FORMATTING OF PARAGRAPHS
+"
+vmap Q gq
+nmap Q gqap
 
-    "
-    " space scroll in normal mode
-    "
-    noremap <C-space> <C-F>
-    noremap <S-space> <C-B>
+" 
+" Improved block moves
+"
+vnoremap < <gv
+vnoremap > >gv
 
-    "
-    " In visual mode C-r gets the selected text and ofers replace
-    "
-    vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+" Automatically jump to end of text you pasted
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
-    " Make vaa select the entire file...
-    vmap aa VGo1G
+" In visual mode C-r gets the selected text and ofers replace
+"
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
-    " NERDTree
-    map <F2> :NERDTreeToggle<cr>
+" I never want regular Visual mode
+"
+nnoremap    v   <C-V>
+nnoremap <C-V>     v
+vnoremap    v   <C-V>
+vnoremap <C-V>     v
 
-    "
-    " NERDCommenter
-    "
-    map <F4> <leader>c<space>
+" Square up visual selections...
+set virtualedit=block
 
-    "
-    " F5 to list buffers and choose one
-    "
-    :nnoremap <F5> :buffers<CR>:buffer<Space>
+" Make BS/DEL work as expected in visual modes (i.e. delete the selected text)...
+vmap <BS> x
 
-    " Change mapping to RIV"
-    nunmap <C-e>
+" Make vaa select the entire file...
+vmap aa VGo1G
 
-    "
-    " change mapping for deactivate highlight
-    if exists('g:spf13_clear_search_highlight')
-        nmap <silent> <leader><cr> :nohlsearch<CR>
-    else
-        nmap <silent> <leader><cr> :set invhlsearch<CR>
-    endif
-" }
+"  Disable highlight when <leader><cr> is presed
+"
+map <silent> <leader><cr> :noh<cr>
+
+" How many times
+"
+nmap <leader>s :%s///g<LEFT><LEFT><LEFT>
+vmap <leader>s :s///g<LEFT><LEFT><LEFT>
+nmap <leader>t :%s/ *$//g<cr>
+vmap <leader>t :s/ *$//g<cr>
+
+" Code folding options
+"
+nmap <leader>f0 :set foldlevel=0<CR>
+nmap <leader>f1 :set foldlevel=1<CR>
+nmap <leader>f2 :set foldlevel=2<CR>
+nmap <leader>f3 :set foldlevel=3<CR>
+nmap <leader>f4 :set foldlevel=4<CR>
+nmap <leader>f5 :set foldlevel=5<CR>
+nmap <leader>f6 :set foldlevel=6<CR>
+nmap <leader>f7 :set foldlevel=7<CR>
+nmap <leader>f8 :set foldlevel=8<CR>
+nmap <leader>f9 :set foldlevel=9<CR>
+
+
+" Added by Tim to map alt-left/right to flip through buffers
+"
+if has('gui_running')
+	nmap <A-h> :bp<CR>
+	nmap <A-l> :bn<CR>
+else
+	nmap <Esc>h :bp<cr>
+	nmap <Esc>l :bn<cr>
+endif
+
+"
+" space scroll in normal mode
+"
+noremap <C-space> <C-F>
+noremap <S-space> <C-B>
+
+" Function Keys Mappings
+"
+" NERDTree
+"   
+map <F2> :NERDTreeToggle<cr>
+
+" NERD Tree to open automatically whenever you fire Vim or open a new buffer. Add these lines to /etc/vim/vimrc or ~/.vimrc:
+
+"
+" NERDCommenter 
+" 
+map <F4> <leader>c<space><cr>
+
+"
+" F5 to list buffers and choose one
+"
+:nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " Functions {
 
@@ -137,26 +191,86 @@ endfunction
 " Vertical Split Buffer Mapping
 command -nargs=1 Vbuffer call VerticalSplitBuffer(<f-args>)
 
-" }
+" VUNDLE
+" """""""""""
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
 
-" Autocommands {
+call vundle#begin()
 
-" For CSV plugin
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'Rykka/riv.vim'              " RST plugin
+Plugin 'airblade/vim-gitgutter'     " See git changes
+Plugin 'easymotion/vim-easymotion'  " Help moving arround
+Plugin 'itchyny/lightline.vim'      " Fancy powerline
+Plugin 'myusuf3/numbers.vim'        " Fancy numbers
+" Plugin 'nanotech/jellybeans.vim'    " Colors
+Plugin 'scrooloose/nerdcommenter'   " Easy comments
+Plugin 'scrooloose/nerdtree'        " Fancy file explorer
+Plugin 'tomasr/molokai'             " Moar colors
+Plugin 'tpope/vim-surround'         " Vim surrounds
+Plugin 'vim-syntastic/syntastic'    " Syntax checking
+Plugin 'dsummersl/wikia-csv'        " CSV plugin
+Plugin 'ekalinin/Dockerfile.vim'    " Help on docker files
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+colorscheme molokai
+let g:rehash256 = 1
+
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" Plugin config
+"
+
+" Nerd plugins
+"
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+"
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
+
+" CSV Plugin Config
 "
 autocmd BufNewFile,BufRead *.csv setf csv
 autocmd BufNewFile,BufRead *.tsv setf csv
 autocmd BufNewFile,BufRead *.tsv Delimiter \t
 autocmd BufNewFile,BufRead *.tsv setlocal ts=20 sw=25
-" }
-
-" For RST processing
-"
 autocmd BufNewFile,BufReadPre *.rst set cc=80 tw=79
-
-set spell spelllang=es_es
 
 " For XML syntax
 "
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
-" }
+
+" Syntastic Config
+"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['python/python3']
