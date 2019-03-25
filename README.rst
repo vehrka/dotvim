@@ -2,40 +2,27 @@
 Vehrka's dotvim
 ================
 
-Renewed dotvim experience using vim.spf13 distribution
+Back to my own vimrc
 
-http://vim.spf13.com/
+:Version: 2.3
+:Date: 2019-03-25
 
-:Version: 1.2
-:Date: 2016-09-27
-
-Easy install
-============
-
-.. code:: bash
-
-    curl http://j.mp/spf13-vim3 -L -o - | sh
-
-
-Updating to the latest version
-------------------------------
-
-.. code:: bash
-
-    cd $HOME/to/spf13-vim/
-    git pull
-    vim +BundleInstall! +BundleClean +q
-
-
-Customization
--------------
-
-Create symbolic links to the *.vimrc.local* and *.vimrc.before.local* and *.vimrc.bundles.local* in your $HOME.
 
 Changelog
 =========
 
-:v1.2: Change vsibility of some files
+Current
+-------
+
+:v2.3: Adding some old tricks that I left out last time
+:v2.2: Linux adaptation and documentation
+:v2.1: Add CSV plugin and Syntax highlight
+:v2.0: Back to vimrc 
+
+Old
+---
+
+:v1.2: Change vsibility of some files and added CSV plugin
 :v1.1: MBA version file
 :v1: Added pre-spf13
 :v0: Version pre-spf13
