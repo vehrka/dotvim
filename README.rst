@@ -4,8 +4,8 @@ Vehrka's dotvim
 
 Back to my own vimrc
 
-:Version: 2.2
-:Date: 2019-03-01
+:Version: 2.3
+:Date: 2019-03-25
 
 
 Changelog
@@ -14,6 +14,7 @@ Changelog
 Current
 -------
 
+:v2.3: Adding some old tricks that I left out last time
 :v2.2: Linux adaptation and documentation
 :v2.1: Add CSV plugin and Syntax highlight
 :v2.0: Back to vimrc 
