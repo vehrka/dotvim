@@ -4,8 +4,8 @@ Vehrka's dotvim
 
 Back to my own vimrc
 
-:Version: 2.3
-:Date: 2019-03-25
+:Version: 2.4
+:Date: 2019-04-05
 
 
 Changelog
@@ -14,6 +14,7 @@ Changelog
 Current
 -------
 
+:v2.4: Config for Python IDE
 :v2.3: Adding some old tricks that I left out last time
 :v2.2: Linux adaptation and documentation
 :v2.1: Add CSV plugin and Syntax highlight
