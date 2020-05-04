@@ -4,8 +4,8 @@ Vehrka's dotvim
 
 Back to my own vimrc
 
-:Version: 2.4
-:Date: 2019-04-05
+:Version: 2.5
+:Date: 2020-05-04
 
 
 Changelog
@@ -13,6 +13,10 @@ Changelog
 
 Current
 -------
+
+
+:v2.5: Rainbow parenthesis, Mac improvs, Sections for folding, new colorscheme,
+       No Black string normalizacion, Change to Plugged, Vimwiki, Quickfix nav
 
 :v2.4: Config for Python IDE
 :v2.3: Adding some old tricks that I left out last time
