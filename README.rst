@@ -4,8 +4,8 @@ Vehrka's dotvim
 
 Back to my own vimrc
 
-:Version: 3
-:Date: 2020-05-09
+:Version: 3.1
+:Date: 2020-11-30
 
 
 Changelog
@@ -14,6 +14,7 @@ Changelog
 Current
 -------
 
+:v3.1: Change in CC, Change in Split, Problem with Black
 :v3: Autopluging install. Adding Tag plugin
 
 Old
