@@ -4,8 +4,8 @@ Vehrka's dotvim
 
 Back to my own vimrc
 
-:Version: 3.1
-:Date: 2020-11-30
+:Version: 3.1.1
+:Date: 2020-12-09
 
 
 Changelog
@@ -14,6 +14,7 @@ Changelog
 Current
 -------
 
+:v3.1.1: Plugin reordering, adding FZF, sudo trick
 :v3.1: Change in CC, Change in Split, Problem with Black
 :v3: Autopluging install. Adding Tag plugin
 
